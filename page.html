@@ -1,0 +1,1242 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>TEHNO-WOOD</title>
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #000;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            height: 70px;
+            background: linear-gradient(#2a2a2a, #1f1f1f);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .logo img {
+                height: 40px;
+            }
+
+        .logo-text {
+            color: #d6b26d;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+            .logo-text b {
+                display: block;
+                font-size: 16px;
+            }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+            .nav a {
+                color: #cfcfcf;
+                text-decoration: none;
+                font-size: 13px;
+                letter-spacing: 1px;
+            }
+
+                .nav a.active {
+                    color: #d6b26d;
+                    position: relative;
+                }
+
+                    .nav a.active::after {
+                        content: "";
+                        position: absolute;
+                        left: 50%;
+                        bottom: -10px;
+                        transform: translateX(-50%);
+                        border-left: 5px solid transparent;
+                        border-right: 5px solid transparent;
+                        border-top: 6px solid #d6b26d;
+                    }
+
+        .phone {
+            text-align: right;
+        }
+
+        .phone-number {
+            color: #d6b26d;
+            font-size: 14px;
+        }
+
+        .callback {
+            display: block;
+            margin-top: 4px;
+            font-size: 11px;
+            color: #d6b26d;
+            text-decoration: none;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: url('hero.jpg') center/cover no-repeat;
+        }
+
+            .hero::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: rgba(0,0,0,.45);
+            }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            padding-left: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #fff;
+        }
+
+            .hero-content h1 {
+                font-size: 48px;
+                line-height: 1.2;
+                margin-bottom: 30px;
+            }
+
+        .hero-btn {
+            padding: 14px 28px;
+            background: #fff;
+            color: #000;
+            font-size: 13px;
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        .hero-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255,255,255,.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+            .hero-arrow.left {
+                left: 40px;
+            }
+
+            .hero-arrow.right {
+                right: 40px;
+            }
+
+        /* ===== STATS ===== */
+        .stats {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .stats-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+            .stats-inner h2 {
+                font-size: 28px;
+                margin-bottom: 60px;
+            }
+
+        .stats-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .stat {
+            font-size: 14px;
+        }
+
+            .stat .line {
+                width: 60px;
+                height: 3px;
+                background: #d6b26d;
+                margin: 0 auto 20px;
+            }
+
+            .stat b {
+                display: block;
+                font-size: 40px;
+                margin-bottom: 10px;
+            }
+
+                .stat b span {
+                    font-size: 20px;
+                }
+
+        /* ===== PRINCIPLES ===== */
+        .principles {
+            background: linear-gradient(#1e1e1e, #141414);
+            color: #fff;
+            padding: 100px 0;
+        }
+
+        .principles-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+            .principles-inner h2 {
+                font-size: 28px;
+                margin-bottom: 60px;
+            }
+
+        .principles-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .principles-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(2, 180px);
+            gap: 20px;
+            border: 1px solid #d6b26d;
+            padding: 20px;
+        }
+
+            .principles-gallery img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+                .principles-gallery img:first-child {
+                    grid-row: 1 / 3;
+                }
+
+        .principles-list .item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,.15);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+            .principles-list .item span {
+                display: inline-block;
+                width: 40px;
+                color: #d6b26d;
+            }
+
+        .process {
+            background: #fff;
+            padding: 120px 0
+        }
+
+        .process-inner {
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .process-head {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 60px
+        }
+
+            .process-head h2 {
+                font-size: 32px;
+                line-height: 1.3
+            }
+
+        .process-text {
+            font-size: 14px;
+            line-height: 1.7
+        }
+
+            .process-text .line {
+                display: block;
+                width: 120px;
+                height: 2px;
+                background: #d6b26d;
+                margin-bottom: 20px
+            }
+
+        .process-media {
+            position: relative;
+            height: 420px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        .process-play {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #d6b26d;
+            color: #000;
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .process-caption {
+            margin-top: 12px;
+            font-size: 13px;
+            color: #fff;
+            text-align: center
+        }
+
+        .realize {
+            background: #1c1c1c;
+            color: #fff;
+            padding: 120px 0
+        }
+
+        .realize-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center
+        }
+
+        .realize-form h3 {
+            font-size: 26px;
+            margin-bottom: 20px
+        }
+
+        .realize-form p {
+            font-size: 14px;
+            margin-bottom: 30px;
+            line-height: 1.6
+        }
+
+        .realize-form input, .realize-form textarea {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #2a2a2a;
+            border: none;
+            color: #fff;
+            font-size: 13px
+        }
+
+        .realize-form textarea {
+            height: 100px;
+            resize: none
+        }
+
+        .realize-form .file {
+            display: block;
+            font-size: 12px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            color: #d6b26d
+        }
+
+        .realize-form button {
+            background: #d6b26d;
+            border: none;
+            padding: 12px 26px;
+            font-size: 13px;
+            cursor: pointer
+        }
+
+        .realize-form .agree {
+            display: block;
+            margin-top: 20px;
+            font-size: 11px;
+            color: #aaa
+        }
+
+        .realize-image img {
+            width: 100%;
+            display: block
+        }
+
+        .scheme {
+            background: #fff;
+            padding: 120px 0;
+        }
+
+        .scheme-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .scheme h2 {
+            font-size: 28px;
+            margin-bottom: 70px;
+        }
+
+        .scheme-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+            .scheme-row.bottom {
+                justify-content: flex-start;
+                padding-left: 260px;
+            }
+
+        .scheme-item {
+            width: 180px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+            .scheme-item .num {
+                display: inline-flex;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #d6b26d;
+                color: #000;
+                font-weight: bold;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 12px;
+            }
+
+        .scheme-line {
+            width: 70px;
+            height: 2px;
+            background: #d6b26d;
+        }
+        .objects {
+            background: #fff;
+            padding: 120px 0;
+        }
+
+        .objects-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .objects h2 {
+            font-size: 28px;
+            margin-bottom: 60px;
+        }
+
+        .objects-slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .object {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+            .object.small {
+                width: 280px;
+                height: 190px;
+                opacity: .6;
+            }
+
+            .object.large {
+                width: 460px;
+                height: 280px;
+            }
+
+            .object::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(to top, rgba(0,0,0,.6), transparent);
+            }
+
+        .object-caption {
+            position: absolute;
+            left: 15px;
+            bottom: 15px;
+            color: #fff;
+            font-size: 12px;
+            text-align: left;
+        }
+
+            .object-caption b {
+                display: block;
+                font-weight: normal;
+            }
+
+            .object-caption span {
+                font-size: 11px;
+                opacity: .8;
+            }
+
+        .objects-dots {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+            .objects-dots span {
+                width: 22px;
+                height: 2px;
+                background: #ccc;
+            }
+
+                .objects-dots span.active {
+                    background: #000;
+                }
+
+        .partners {
+            background: #f6f4e6;
+            padding: 120px 0;
+        }
+
+        .partners-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .partners h2 {
+            font-size: 28px;
+            margin-bottom: 60px;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 50px 40px;
+            align-items: center;
+            justify-items: center;
+        }
+
+            .partners-grid img {
+                max-width: 140px;
+                max-height: 80px;
+                object-fit: contain;
+                filter: grayscale(100%);
+                opacity: .9;
+            }
+
+        .partners-dots {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+            .partners-dots span {
+                width: 24px;
+                height: 2px;
+                background: #bfbfbf;
+            }
+
+                .partners-dots span.active {
+                    background: #000;
+                }
+        .geo {
+            background: #f6f6f2;
+            padding: 80px 0 120px;
+        }
+
+        .geo-header {
+            max-width: 1400px;
+            margin: 0 auto 40px;
+            padding: 0 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #d6b26d;
+        }
+
+            .geo-header h2 {
+                font-size: 36px;
+                font-weight: bold;
+                color: #f0b21a;
+                letter-spacing: 2px;
+            }
+
+        .geo-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #f0b21a;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+            .geo-logo img {
+                height: 40px;
+            }
+
+        .geo-map {
+            max-width: 1600px;
+            margin: 40px auto 0;
+            padding: 0 20px;
+        }
+
+            .geo-map img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #000;
+        }
+
+        /* ===== Благодарственные письма ===== */
+        .letters {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+            .letters h2 {
+                font-size: 32px;
+                margin-bottom: 50px;
+            }
+
+        .letters-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .letters-list {
+            display: flex;
+            gap: 30px;
+        }
+
+        .letter {
+            width: 220px;
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 10px;
+        }
+
+            .letter img {
+                width: 100%;
+                display: block;
+            }
+
+        .arrow {
+            width: 40px;
+            height: 40px;
+            background: #777;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            user-select: none;
+        }
+
+        .pagination {
+            margin-top: 35px;
+        }
+
+            .pagination span {
+                display: inline-block;
+                width: 30px;
+                height: 2px;
+                background: #ccc;
+                margin: 0 6px;
+            }
+
+            .pagination .active {
+                background: #000;
+            }
+
+        /* ===== Контакты + карта ===== */
+        .contacts-map {
+            display: flex;
+            min-height: 420px;
+        }
+
+        .contacts {
+            width: 50%;
+            background: #1e1e1e;
+            color: #fff;
+            padding: 60px;
+        }
+
+            .contacts h3 {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+
+            .contacts ul {
+                list-style: none;
+                margin-bottom: 30px;
+            }
+
+            .contacts li {
+                margin-bottom: 15px;
+                font-size: 15px;
+            }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+            .form input[type="text"] {
+                height: 42px;
+                padding: 0 15px;
+                border: none;
+            }
+
+            .form button {
+                height: 42px;
+                background: #caa15a;
+                border: none;
+                color: #000;
+                cursor: default;
+            }
+
+            .form label {
+                font-size: 12px;
+                opacity: 0.7;
+            }
+
+        .map {
+            width: 50%;
+        }
+
+            .map iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+        .categories {
+            background: #f3f1e8;
+            padding: 120px 0
+        }
+
+        .categories-inner {
+            max-width: 1200px;
+            margin: 0 auto
+        }
+
+        .categories-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px
+        }
+
+            .categories-header h2 {
+                font-size: 32px;
+                line-height: 1.3
+            }
+
+        .categories-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333
+        }
+
+            .categories-text .line {
+                display: block;
+                width: 120px;
+                height: 2px;
+                background: #000;
+                margin-bottom: 20px
+            }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: 180px;
+            gap: 20px
+        }
+
+        .cat {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+            color: #fff;
+            text-decoration: none;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden
+        }
+
+            .cat::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: rgba(0,0,0,.35)
+            }
+
+            .cat span, .cat i {
+                position: relative;
+                z-index: 1
+            }
+
+            .cat span {
+                font-size: 14px
+            }
+
+            .cat i {
+                font-size: 11px;
+                color: #d6b26d;
+                margin-top: 6px
+            }
+
+            .cat.large {
+                grid-column: 1/3;
+                grid-row: 1/3
+            }
+
+            .cat.tall {
+                grid-row: 1/3
+            }
+
+            .cat.wide {
+                grid-column: span 2
+            }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: #1b1b1b;
+            border-top: 1px solid #2c2c2c;
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            height: 80px;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Логотип */
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #caa15a;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+            .footer-logo img {
+                height: 40px;
+            }
+
+        /* Меню */
+        .footer-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+            .footer-nav a {
+                color: #d5d5d5;
+                text-decoration: none;
+                font-size: 13px;
+                text-transform: uppercase;
+            }
+
+                .footer-nav a:hover {
+                    color: #caa15a;
+                }
+
+        /* Контакты */
+        .footer-contacts {
+            text-align: right;
+            color: #caa15a;
+        }
+
+            .footer-contacts .phone {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+
+            .footer-contacts .callback {
+                font-size: 11px;
+                text-transform: uppercase;
+                opacity: 0.7;
+            }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="logo.png" alt="TW">
+                <div class="logo-text">
+                    <b>TEHNO-WOOD</b>
+                    мебельная фабрика
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#" class="active">РАБОТЫ</a>
+                <a href="#">ОБЪЕКТЫ</a>
+                <a href="#">МАТЕРИАЛЫ</a>
+                <a href="#">О КОМПАНИИ</a>
+                <a href="#">КОНТАКТЫ</a>
+            </nav>
+            <div class="phone">
+                <div class="phone-number">8 (800) 222-65-05</div>
+                <a href="#" class="callback">ОБРАТНЫЙ ЗВОНОК</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Мебель<br>индивидуального<br>исполнения</h1>
+            <a href="#" class="hero-btn">ОСТАВИТЬ ЗАЯВКУ</a>
+        </div>
+        <div class="hero-arrow left">‹</div>
+        <div class="hero-arrow right">›</div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-inner">
+            <h2>Tehno-Wood в цифрах</h2>
+            <div class="stats-list">
+                <div class="stat"><span class="line"></span><b>6</b><p>производственных направлений</p></div>
+                <div class="stat"><span class="line"></span><b>10</b><p>лет на рынке</p></div>
+                <div class="stat"><span class="line"></span><b>1500</b><p>значимых объектов</p></div>
+                <div class="stat"><span class="line"></span><b>6000<span>м²</span></b><p>производственной площади</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="principles">
+        <div class="principles-inner">
+            <h2>Принципы нашей работы</h2>
+            <div class="principles-content">
+                <div class="principles-gallery">
+                    <img src="p1.jpg">
+                    <img src="p2.jpg">
+                    <img src="p3.jpg">
+                </div>
+                <div class="principles-list">
+                    <div class="item"><span>01</span>Использование только качественного материала и фурнитуры</div>
+                    <div class="item"><span>02</span>Клиентоориентированность и мобильность</div>
+                    <div class="item"><span>03</span>Жесткий контроль качества и доставки продукции</div>
+                    <div class="item"><span>04</span>Мгновенное реагирование на требования заказчиков</div>
+                    <div class="item"><span>05</span>Многопрофильное производство по принципу «всё включено»</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="categories-inner">
+            <div class="categories-header">
+                <h2>Изготовление мебели<br>по индивидуальному исполнению</h2>
+                <div class="categories-text">
+                    <span class="line"></span>
+                    <p>Мебельная фабрика Техно-Вуд с 2010 года занимается оснащением учреждений образования, здравоохранения и силовых ведомств качественной современной мебелью.</p>
+                    <p>Важным конкурентным преимуществом нашей фабрики является наличие разных направлений в производстве мебели.</p>
+                </div>
+            </div>
+
+            <div class="categories-grid">
+                <a class="cat large" style="background-image:url('v1.jpg')"><span>Гос. контракты</span><i>Подробнее →</i></a>
+                <a class="cat tall" style="background-image:url('v2.jpg')"><span>Входная группа<br>и хранение</span><i>Подробнее →</i></a>
+                <a class="cat" style="background-image:url('v3.jpg')"><span>Кухонная зона</span><i>Подробнее →</i></a>
+                <a class="cat" style="background-image:url('v4.jpg')"><span>Мягкая мебель</span><i>Подробнее →</i></a>
+                <a class="cat" style="background-image:url('v5.jpg')"><span>Офисная мебель</span><i>Подробнее →</i></a>
+                <a class="cat" style="background-image:url('v6.jpg')"><span>Мебель для гостиной</span><i>Подробнее →</i></a>
+                <a class="cat wide" style="background-image:url('v7.jpg')"><span>Детские комнаты</span><i>Подробнее →</i></a>
+                <a class="cat wide" style="background-image:url('v8.jpg')">$1</a>
+                <a class="cat wide" style="background-image:url('v9.jpg')"><span>Торгово-выставочное оборудование</span><i>Подробнее →</i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="process-inner">
+            <div class="process-head">
+                <h2>Как мы<br>производим мебель</h2>
+                <div class="process-text">
+                    <span class="line"></span>
+                    <p>Производственный цех расположен в Кстовском районе, Нижегородской области и занимает более 6000 м².</p>
+                    <p>Наличие многофункционального современного оборудования и хорошо развитой логистической сети позволяет минимизировать человеческий фактор при выпуске продукции и осуществлять отгрузки нашим партнерам и клиентам точно в указанные сроки.</p>
+                </div>
+            </div>
+
+            <div class="process-media" style="background-image:url('v10.png')">
+                <div class="process-play">▶</div>
+                <div class="process-caption">Нажмите, чтобы посмотреть<br>видео о производстве</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="realize">
+        <div class="realize-inner">
+            <div class="realize-form">
+                <h3>Реализуем ваши идеи</h3>
+                <p>Пришлите нам свой эскиз или опишите задумку и мы воплотим ее в жизнь в самые кратчайшие сроки</p>
+                <input type="text" placeholder="Телефон">
+                <textarea placeholder="Ваш комментарий"></textarea>
+                <label class="file">Прикрепить файл</label>
+                <button>Отправить</button>
+                <span class="agree">Даю согласие на обработку моих персональных данных</span>
+            </div>
+            <div class="realize-image">
+                <img src="v11.jpg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="scheme">
+        <div class="scheme-inner">
+            <h2>Схема работы</h2>
+
+            <div class="scheme-row">
+                <div class="scheme-item">
+                    <span class="num">01</span>
+                    <p>Оставляете нам заявку<br>на сайте или звоните</p>
+                </div>
+                <span class="scheme-line"></span>
+
+                <div class="scheme-item">
+                    <span class="num">02</span>
+                    <p>Наш специалист выезжает<br>к вам на замер</p>
+                </div>
+                <span class="scheme-line"></span>
+
+                <div class="scheme-item">
+                    <span class="num">03</span>
+                    <p>Мы составляем смету,<br>учитывая все ваши пожелания</p>
+                </div>
+                <span class="scheme-line"></span>
+
+                <div class="scheme-item">
+                    <span class="num">04</span>
+                    <p>Согласовываем сроки,<br>стоимость и заключаем договор</p>
+                </div>
+            </div>
+
+            <div class="scheme-row bottom">
+                <div class="scheme-item">
+                    <span class="num">05</span>
+                    <p>Приступаем к работе</p>
+                </div>
+                <span class="scheme-line"></span>
+
+                <div class="scheme-item">
+                    <span class="num">06</span>
+                    <p>По завершении работы<br>— ее прием и оплата</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="objects">
+        <div class="objects-inner">
+            <h2>Наши объекты</h2>
+
+            <div class="objects-slider">
+                <div class="object small" style="background-image:url('obj1.jpg')">
+                    <div class="object-caption">
+                        <b>ГКУ «Технический центр департамента культуры»</b>
+                        <span>г. Москва</span>
+                    </div>
+                </div>
+
+                <div class="object large active" style="background-image:url('obj2.jpg')">
+                    <div class="object-caption">
+                        <b>Студия мебели Техно-Вуд</b>
+                        <span>г. Геленджик</span>
+                    </div>
+                </div>
+
+                <div class="object small" style="background-image:url('obj3.jpg')">
+                    <div class="object-caption">
+                        <b>ЖК «Изумрудный замок»</b>
+                        <span>г. Нижний Новгород</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="objects-dots">
+                <span></span>
+                <span class="active"></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners">
+        <div class="partners-inner">
+            <h2>С нами работают</h2>
+
+            <div class="partners-grid">
+                <img src="logo1.png" alt="">
+                <img src="logo2.png" alt="">
+                <img src="logo3.png" alt="">
+                <img src="logo4.png" alt="">
+                <img src="logo5.png" alt="">
+                <img src="logo6.png" alt="">
+                <img src="logo7.png" alt="">
+                <img src="logo8.png" alt="">
+                <img src="logo9.png" alt="">
+                <img src="logo10.png" alt="">
+            </div>
+
+            <div class="partners-dots">
+                <span></span>
+                <span class="active"></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="geo">
+        <div class="geo-map">
+            <img src="map-russia.png" alt="География заказчиков">
+        </div>
+    </section>
+
+    <section class="letters">
+        <h2>Благодарственные письма</h2>
+
+        <div class="letters-row">
+            <div class="arrow left">‹</div>
+
+            <div class="letters-list">
+                <div class="letter"><img src="letter.jpg" alt=""></div>
+                <div class="letter"><img src="letter.jpg" alt=""></div>
+                <div class="letter"><img src="letter.jpg" alt=""></div>
+                <div class="letter"><img src="letter.jpg" alt=""></div>
+            </div>
+
+            <div class="arrow right">›</div>
+        </div>
+
+        <div class="pagination">
+            <span></span>
+            <span class="active"></span>
+            <span></span>
+        </div>
+    </section>
+
+    <section class="contacts-map">
+        <div class="contacts">
+            <h3>Свяжитесь с нами любым<br>удобным способом</h3>
+
+            <ul>
+                <li>📞 8 (83145) 2-46-11</li>
+                <li>✉ tehno-wood@mail.ru</li>
+                <li>📍 г. Кстово, Типографский проезд, 11а</li>
+            </ul>
+
+            <div class="form">
+                <input type="text" placeholder="+7(___) ___-__-__">
+                <button>Отправить</button>
+
+                <label>
+                    <input type="checkbox">
+                    Даю согласие на обработку моих персональных данных
+                </label>
+            </div>
+        </div>
+
+        <div class="map">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=44.195%2C56.147&z=13"
+                    frameborder="0">
+            </iframe>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-inner">
+
+            <div class="footer-logo">
+                <img src="logo.png" alt="TEHNO-WOOD">
+                <span>мебельная фабрика</span>
+            </div>
+
+            <nav class="footer-nav">
+                <a href="#">Работы</a>
+                <a href="#">Объекты</a>
+                <a href="#">Материалы</a>
+                <a href="#">О компании</a>
+                <a href="#">Контакты</a>
+            </nav>
+
+            <div class="footer-contacts">
+                <div class="phone">📞 8 (800) 222-65-05</div>
+                <div class="callback">Обратный звонок</div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
